@@ -1,0 +1,4 @@
+# apt packages the bot kit needs on Ubuntu 22.04 + ROS 2 Humble (desktop or ros-base). install.sh installs the .deb
+# files shipped in debs/ (downloaded against ros:humble-ros-base-jammy), online `sudo apt install` of these names works too.
+ros-humble-control-msgs
+ros-humble-rmw-cyclonedds-cpp

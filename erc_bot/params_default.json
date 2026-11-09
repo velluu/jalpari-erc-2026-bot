@@ -1,0 +1,63 @@
+{
+ "note": "Every knob with lane B's current values (erc_bot/stages.py at commit 7074cd2, read 2026-11-05 21:09 Z8). params.load reads its defaults from this file only. Pick knobs set ScriptedPick's per-instance geometry and opts; wall knobs drive lane G's wall manoeuvre (off by default).",
+ "pick": {
+  "torso": {
+   "1": 0.345,
+   "2": 0.2,
+   "3": 0.0,
+   "4": 0.0
+  },
+  "reach": {
+   "1": 0.55,
+   "2": 0.72,
+   "3": 0.75,
+   "4": 0.85
+  },
+  "arm_y": -0.24,
+  "dz": {
+   "1": -0.05,
+   "2": 0.0,
+   "3": 0.0,
+   "4": 0.0
+  },
+  "insert_past": 0.07,
+  "carry": "overlap"
+ },
+ "wall": {
+  "enable": 0,
+  "detect_off": 0.4,
+  "push": 0,
+  "push_off": 0.015,
+  "push_dz": 0.0,
+  "push_yaw": 0.0,
+  "push_start": 0.08,
+  "push_dx": 0.12,
+  "push_steps": 6,
+  "push_s": 0.8,
+  "push_sweep": 0.0,
+  "push_back": 0.1,
+  "g_off": 0.0,
+  "g_dx": 0.0,
+  "g_dz": 0.0,
+  "g_yaw": 0.0,
+  "g_open": 0.0,
+  "g_pre": 0.09,
+  "g_insert": 0.1,
+  "g_steps": 12,
+  "g_step_s": 0.7,
+  "g_lift": 0.025,
+  "g_extract": 0.2,
+  "base_off": 0.0,
+  "reach_add": 0.0,
+  "redetect": 0
+ },
+ "place": {
+  "relook": 1,
+  "finallook": 0,
+  "stand": 0.7,
+  "deep": 0.12,
+  "release": "floor",
+  "gap": 0.005,
+  "clear": 0.08
+ }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CycloneDDS config for connecting to TIAGo Pro. Used via tiago_env.sh. -->
+<CycloneDDS xmlns="https://cdds.io/config">
+  <Domain Id="any">
+    <General>
+      <Interfaces>
+        <!-- set by tiago_env.sh: the network interface with a 10.68.0.x address -->
+        <NetworkInterface name="${ROBOT_IFACE}" priority="1"/>
+        <NetworkInterface name="lo" priority="0"/>
+      </Interfaces>
+      <AllowMulticast>false</AllowMulticast>
+      <MaxMessageSize>1400B</MaxMessageSize>
+    </General>
+    <Discovery>
+      <ParticipantIndex>auto</ParticipantIndex>
+      <MaxAutoParticipantIndex>500</MaxAutoParticipantIndex>
+      <Peers>
+        <Peer Address="10.68.0.1"/>  <!-- robot -->
+        <Peer Address="localhost"/>  <!-- other ROS 2 processes on this computer -->
+      </Peers>
+    </Discovery>
+    <Internal>
+      <!-- erc-gym lane C: refuse to start if the kernel caps UDP receive buffers below 4 MB (laptop default
+           net.core.rmem_max 212992 loses whole camera frames for best-effort readers). Needs the sysctl in 60-erc-dds.conf. -->
+      <SocketReceiveBufferSize min="4MB"/>
+    </Internal>
+  </Domain>
+</CycloneDDS>
